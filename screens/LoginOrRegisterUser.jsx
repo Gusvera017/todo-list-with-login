@@ -6,7 +6,7 @@ const app = initializeApp(firebaseConfig)
 const auth = getAuth()
 //
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { View, Text, TextInput, Pressable, TouchableOpacity, ActivityIndicator } from 'react-native';
+import { View, Text, TextInput, Pressable, TouchableOpacity, ActivityIndicator, Alert } from 'react-native';
 import React, { useState, useEffect, useContext } from 'react';
 import { loginValidationSchema } from '../validation/validationSchema';
 import { useNavigation } from '@react-navigation/native';
