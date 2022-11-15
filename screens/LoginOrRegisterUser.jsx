@@ -34,13 +34,33 @@ const LoginOrRegisterUser = () => {
   }, [])
 
   const handleRegister = (values) => {
-    createUserWithEmailAndPassword(auth, values.email, values.password)
-      .then(userCredentials => {
-        console.log(userCredentials);
-        setUser(prev => ({ ...prev, email: values.email }))
-        storeUser(values.email)
-      })
-      .catch(err => console.log(err))
+    Alert.alert(
+      "Registro de Usuario",
+      `¿Desea registrar el mail: ${values.email} como usuario`,
+      [
+        {
+          text: "Cancel",
+        },
+        {
+          text: "Aceptar", onPress: () => Alert.alert(
+            "¡Gracias!",
+            `El usuario el mail: ${values.email}, se registó con éxito`,
+            [
+              {
+                text: "Aceptar", onPress: () => createUserWithEmailAndPassword(auth, values.email, values.password)
+                  .then(userCredentials => {
+                    console.log(userCredentials);
+                    setUser(prev => ({ ...prev, email: values.email }))
+                    storeUser(values.email)
+                  })
+                  .catch(err => console.log(err))
+              }
+            ]
+          )
+        }
+      ]
+    )
+
   }
 
   const handleLogin = (values) => {

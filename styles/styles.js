@@ -89,7 +89,7 @@ export const styles = StyleSheet.create({
   square: {
     width: 24,
     height: 24,
-    backgroundColor: 'lightblue',
+    backgroundColor: 'tomato',
     marginRight: 15,
   },
   itemText: {
@@ -98,7 +98,7 @@ export const styles = StyleSheet.create({
   circular: {
     width: 12,
     height: 12,
-    borderColor: 'blue',
+    borderColor: 'tomato',
     borderWidth: 2,
     borderRadius: 5,
   },
